@@ -70,3 +70,9 @@ resource "aws_security_group" "dev_sg" {
     Name = "dev_sg"
   }
 }
+
+resource "aws_key_pair" "dev_key" {
+  key_name   = "dev_key"
+  public_key = file(~/.ssh/mtckey.pub)
+  
+} 
